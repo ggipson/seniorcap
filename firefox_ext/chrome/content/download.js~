@@ -1,0 +1,30 @@
+// File Name: download.js
+// Author: Grant Gipson
+// Date Last Edited: April 17, 2011
+// Description: Handles download requests for Senior CAP Firefox extension
+
+// downloadReq()
+// Sends a request to SeniorCAP server to download content for this user
+function downloadReq(mode) {
+    if( mode === "single" ) { // single page
+        // prepare download request
+	var req_ip = "127.0.0.1"; // TEMPORARY HACK
+	var req_type = "download";
+        var req_url = window.content.location.href;
+	var req_mode = "single";
+
+	var req = new String();
+	req = req.concat(
+	    req_ip,   "\n", 
+	    req_type, "\n", 
+	    req_mode, "\n", 
+	    req_url
+	);
+
+	// send request to CGI script
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("POST", "cgi-bin/clientreq.pl", false);
+	xmlhttp.send(req);
+	document.getElementById('url').value = xmlhttp.responseText;
+    }
+}

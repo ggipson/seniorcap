@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="Senior CAP Settings">
+	<prefpane id="connection" label="Connection">
+		<preferences>
+			<preference id="serverAddress" name="extensions.seniorcap.serverAddress" type="string" />
+		</preferences>
+
+		<label value="Server address" />		
+		<textbox preference="serverAddress" />
+	</prefpane>
+</prefwindow>

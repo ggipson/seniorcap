@@ -1,0 +1,12 @@
+#logo {
+	background-color:#ffa500;
+	padding:0px 5px 0px 5px;
+	border:dotted thin;
+	border-left:none;
+}
+#logo description {
+	padding:0px;
+	margin:0px;
+}
+#gnam-clientbar toolbarbutton {margin-top:1px;}
+#status {vertical-align:middle;}

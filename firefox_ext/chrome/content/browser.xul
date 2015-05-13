@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://seniorcap/content/style.css" type="text/css"?>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/javascript" src="chrome://seniorcap/content/connect.js"/>
+<script type="application/javascript" src="chrome://seniorcap/content/download.js"/>
+
+<toolbox id="navigator-toolbox">
+  <toolbar id="gnam-clientbar" insertafter="nav-bar" style="font-size:10px">
+    <vbox id="logo">
+      <description class="plain header" value="Senior CAP Project"></description>
+			<description class="plain" value="Grant Gipson, SP 2011"></description>
+    </vbox>
+		<vbox>
+			<toolbarbutton
+				id="settings"
+				label="Settings"
+				oncommand="window.openDialog('chrome://seniorcap/content/settings.xul')"
+			/>
+    </vbox>
+		<vbox>
+			<toolbarbutton
+				id="home"
+				label="Home"
+				oncommand="browseServer()"
+			/>
+		</vbox>
+    <toolbarseparator />
+    <vbox>
+      <toolbarbutton 
+        id="download1" 
+				label="Download Page"
+				oncommand="downloadReq('single')"
+      />
+		</vbox>
+  </toolbar>
+</toolbox>
+
+</overlay>

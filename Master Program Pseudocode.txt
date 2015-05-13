@@ -1,0 +1,38 @@
+// Senior CAP Project
+// Grant Gipson
+// Master Program Pseudocode
+// Feb. 15, 2011
+
+Check for already-running instance of program
+Terminate if program is already running
+
+Read capconf.xml [FAILURE FATAL]
+Open capmaster.log [FAILURE FATAL]
+**OPEN ADDITIONAL LOG FILES**
+Open database connection
+Open capman.fifo // CAPManage pipe
+Open webmas.fifo // Web-master pipe
+**OPEN ADDITIONAL PIPES**
+
+Write MSG_MASTERHERE on webmas.fifo
+
+Main program loop
+	Read capman.fifo
+	If command is MSG_QUIT then
+		Send MSG_QUIT on all pipes
+		Set exit flag for main loop
+		Resume loop until all data has been read from pipes
+	**PROCESS OTHER COMMANDS***
+	Else then
+		Write MSG_UNKNOWN on capman.fifo
+
+	Read next pipe
+	If pipe is empty and exit flag is set then
+		Close pipe
+	Handle read message
+	If exit flag is not set then
+		Send applicable response back on same pipe
+
+**CLOSE PIPES**
+Close database connection
+**CLOSE LOG FILES**

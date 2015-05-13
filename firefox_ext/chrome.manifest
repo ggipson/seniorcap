@@ -1,0 +1,4 @@
+content  seniorcap         chrome/content/
+locale   seniorcap  en-US  chrome/locale/en-US/
+
+overlay  chrome://browser/content/browser.xul chrome://seniorcap/content/browser.xul

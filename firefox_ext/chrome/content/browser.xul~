@@ -1,0 +1,20 @@
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/javascript" 
+  src="chrome://seniorcap/content/download.js"/>
+
+<toolbox id="navigator-toolbox">
+  <toolbar id="gnam-clientbar" insertafter="nav-bar" style="font-size:10px">
+    <vbox>
+      <toolbarbutton 
+        id="download1" 
+	label="Download Page"
+	oncommand="downloadReq('http://localhost/cgi-bin/clientreq.pl', 'single')"
+      />
+    </vbox>
+    <vbox>
+      <description id="url" value="Hello world!"/>
+    </vbox>
+  </toolbar>
+</toolbox>
+
+</overlay>

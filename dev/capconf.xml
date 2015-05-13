@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE _capconf SYSTEM "capconf.dtd">
+
+<!-- File Name: capconf.xml -->
+<!-- Author: Grant Gipson -->
+<!-- Date Last Edited: April 21, 2011 -->
+<!-- Description: Configuration file for Senior CAP Project -->
+
+<_capconf>
+    <components>
+      <master_program>/home/grant/seniorcap/dev/capmaster</master_program>
+      <downloader>/home/grant/seniorcap/dev/download.pl</downloader>
+      <downloader_dir>/var/cap/download/</downloader_dir>
+      <content_dir>/var/cap/content/</content_dir>
+      <archiver>/home/grant/seniorcap/dev/archive.pl</archiver>
+      <archiver_dir>/var/cap/archive/</archiver_dir>
+    </components>
+    <database>
+      <connect>tcp://127.0.0.1:3306/cap</connect>
+      <master_user>master</master_user>
+      <master_password>m@$t3r</master_password>
+    </database>
+    <log_files>
+      <master_log>/var/log/cap/capmaster.log</master_log>
+      <clientreq_log>/var/log/cap/clientreq.log</clientreq_log>
+      <downloader_log>/var/log/cap/downloader.log</downloader_log>
+      <archreq_log>/var/log/cap/archreq.log</archreq_log>
+      <archiver_log>/var/log/cap/archiver.log</archiver_log>
+    </log_files>
+    <log_priority_write>4</log_priority_write> <!-- must be 0-4 -->
+    <pid_file>/var/cap/cap.pid</pid_file>
+    <pipes>
+      <pipes_dir>/var/cap/</pipes_dir>
+      <pipes_master>master.fifo</pipes_master>
+      <pipes_downloader>download.fifo</pipes_downloader>
+      <pipes_archiver>archive.fifo</pipes_archiver>
+    </pipes>
+</_capconf>

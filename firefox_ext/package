@@ -1,0 +1,4 @@
+#!/bin/sh
+rm /var/www/cap/seniorcap.xpi
+zip -r seniorcap.xpi install.rdf chrome.manifest chrome defaults
+cp seniorcap.xpi /var/www/cap/

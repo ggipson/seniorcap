@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+chdir("/var/cap/content");
+opendir(DIR, ".");
+@filelist = readdir(DIR);
+
+foreach $file (@filelist) {
+    ($id,$ext) = split(/./);
+    system("mv $id.$ext $id.html");
+}
